@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Tamagotchi;
 using Tamagotchi.Models;
 
 namespace Tamagotchi.Tests
