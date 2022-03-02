@@ -5,7 +5,7 @@ namespace Tamagotchi.Models
   public class Pet 
   {
     public string Name { get; set; }
-    public int AttentionPoints { get; set; }
+    public int PlayPoints { get; set; }
     public int EnergyPoints { get; set; }
     public int HungerPoints { get; set; }
     public string Type { get; set; }
@@ -16,23 +16,29 @@ namespace Tamagotchi.Models
     {
       Name = name;
       Type = type;
-      AttentionPoints = 100;
-      EnergyPoints = 100;
-      HungerPoints = 100;
+      EnergyPoints = 80;
+      HungerPoints = 80;
+      PlayPoints = 80;
       _petList.Add(this);
     }
 
-    public static void Sleep()
+    public void Sleep()
     {
-
+      this.EnergyPoints += 10;
+      this.HungerPoints -= 10;
+      this.PlayPoints -= 5;
     }
-    public static void Feed()
+    public void Feed()
     {
-      
+      this.EnergyPoints -= 10;
+      this.HungerPoints += 10;
+      this.PlayPoints -= 5;
     }
-    public static void Play()
+    public void Play()
     {
-      
+      this.EnergyPoints -= 15;
+      this.HungerPoints -= 10;
+      this.PlayPoints += 15;
     }
   }
 }
