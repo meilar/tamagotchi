@@ -12,6 +12,11 @@ namespace Tamagotchi.Models
 
     private static List<Pet> _petList = new List<Pet> { };
 
+    public static List<Pet> GetPets()
+    {
+      return _petList;
+    }
+
     public Pet(string name, string type)
     {
       Name = name;

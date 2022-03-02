@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>	¡Tamagotchi!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4">Tamagotchi: Your Digital Pet</h1>
+        <p class="lead">OOOOOOH MY SOOOO CUTE</p>
+        <!-- <form action="/pets/new" method="GET">
+        <button class="btn btn-primary btn-lg" role="button">Meet your new friend</button>
+        </form> -->
+      </div>
+      @using Tamagotchi.Models
+      <p> Name: @Model.Name </p>
+      <ul>
+        <li> Type: @Model.Type </li>
+        <li> Energy: @Model.EnergyPoints </li>
+        <li> Hunger: @Model.HungerPoints </li>
+        <li> Play: @Model.PlayPoints </li>
+      </ul>
+      <form action="/pets/feed" method="post">
+        <button class="btn btn-success" type="submit">Feed @Model.Name</button>
+      </form>
+      <form action="/pets/sleep" method="post">
+        <button class="btn btn-primary" type="submit">Put @Model.Name to sleep.....forever</button>
+      </form>
+      <form action="/pets/play" method="post">
+        <button class="btn btn-warning" type="submit">Play with @Model.Name</button>
+      </form>
+    </div>
+  </body>
+</html>

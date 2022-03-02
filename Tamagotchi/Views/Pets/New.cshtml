@@ -9,9 +9,13 @@
     <div class="container">
       <div class="jumbotron">
         <h1 class="display-4">Tamagotchi: Your Digital Pet</h1>
-        <p class="lead">Are you lonely? Did you ever want a pet that you could keep in your pocket? We want to introduce you to the Tamagotchi, a digital pet. Click on the button below to start your journey together.</p>
-        <form action="/pets/new" method="GET">
-        <button class="btn btn-primary btn-lg" role="button">Meet your new friend</button>
+        <p class="lead">Fill in the form below to create a new Tamagotchi pet.</p>
+        <form action="/pets" method="POST">
+        <label for="name">Your new friends name:</label>
+        <input id="name" name="name" type="text">
+        <label for="type">What type of pet is your new friend:</label>
+        <input id="type" name="type" type="text">
+        <button type="submit" class="btn btn-primary btn-lg" role="button">Create your pet</button>
         </form>
       </div>
     </div>
