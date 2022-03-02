@@ -22,6 +22,27 @@ namespace Tamagotchi.Tests
       Assert.AreEqual(90, newPet.EnergyPoints);
       Assert.AreEqual(70, newPet.HungerPoints);
       Assert.AreEqual(75, newPet.PlayPoints);
+    
+    }
+
+    [TestMethod]
+    public void Feed_ModifyPropertyPoints_True()
+    {
+      Pet newPet = new Pet("Max", "Dog");
+      newPet.Feed();
+      Assert.AreEqual(70, newPet.EnergyPoints);
+      Assert.AreEqual(90, newPet.HungerPoints);
+      Assert.AreEqual(75, newPet.PlayPoints);
+    }
+
+    [TestMethod]
+    public void Play_ModifyPropertyPoints_True()
+    {
+      Pet newPet = new Pet("Max", "Dog");
+      newPet.Play();
+      Assert.AreEqual(65, newPet.EnergyPoints);
+      Assert.AreEqual(70, newPet.HungerPoints);
+      Assert.AreEqual(95, newPet.PlayPoints);
     }
   }
 }
