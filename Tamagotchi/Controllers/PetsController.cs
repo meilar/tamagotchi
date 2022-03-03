@@ -23,7 +23,13 @@ namespace Tamagotchi.Controllers
     [HttpPost("/pets")]
     public ActionResult Create(string name, string type)
     {
-      Pet newPet = new Pet(name, type);
+      if (type.ToUpper() == "DOG")
+      {
+        Dog newPet = new Dog(name, type);
+      } else
+      {
+        Pet newPet = new Pet(name, type);
+      }
       return RedirectToAction("Index");
     }
 
